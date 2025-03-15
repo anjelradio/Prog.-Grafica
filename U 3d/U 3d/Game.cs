@@ -27,8 +27,8 @@ namespace U_3d
 
 
         private readonly float[] _vertices = {
-            // Posiciones XYZ           // Colores RGB
-            // Pilar izquierdo - frente y atrás
+            // Posiciones XYZ           // Colores RGB 
+            // Cara frontal de la U
             -1.0f, -1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 0
             -1.0f,  1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 1
             -0.6f,  1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 2
@@ -38,7 +38,7 @@ namespace U_3d
              1.0f,  1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 6
              1.0f, -1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 7
             
-            // Pilar derecho - frente y atrás
+            // Cara trasera de la U
              -1.0f, -1.0f,  -0.5f,        1.0f, 1.0f, 1.0f, // 8
              -1.0f,  1.0f,  -0.5f,        1.0f, 1.0f, 1.0f, // 9
              -0.6f,  1.0f,  -0.5f,        1.0f, 1.0f, 1.0f, // 10
@@ -50,7 +50,7 @@ namespace U_3d
     
         };
 
-        // Aristas para wireframe - Pares de índices que definen cada línea
+        // Pares de índices que definen cada línea
         private readonly uint[] _edges = {
             // Parte Frontal de la U
             0, 1, 1, 2, 2, 3,

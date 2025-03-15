@@ -53,7 +53,6 @@ namespace U_3d
 
         private int CompileShader(ShaderType type, string path)
         {
-            // Utilizaremos strings para los shaders directamente en lugar de cargar archivos
             string source;
             if (type == ShaderType.VertexShader)
             {
