@@ -10,20 +10,20 @@ namespace U_3d
 {
     public class Game : GameWindow
     {
-        private int _vertexBufferObject;
-        private int _elementBufferObject;
-        private int _vertexArrayObject;
-        private Shader _shader;
-        private Matrix4 _view;
-        private Matrix4 _projection;
+        private int vertexBufferHandle;
+        private int elementBufferHandle;
+        private int vertexArrayHandle;
+        private Shader shader;
+        private Matrix4 view;
+        private Matrix4 projection;
         private Vector3 _cameraPosition = new Vector3(0.0f, 0.0f, 5.0f);
         private float _cameraYaw = -90.0f;
         private float _cameraPitch = 0.0f;
         private Vector3 _cameraFront = new Vector3(0.0f, 0.0f, -1.0f);
         private Vector3 _cameraUp = Vector3.UnitY;
         private float _cameraSpeed = 1.5f;
-        private float _rotationSpeed = 45.0f;
-        private float _totalRotation = 0.0f;
+        private float rotationSpeed = 45.0f;
+        private float totalRotation = 0.0f;
 
 
         private readonly float[] _vertices = {
@@ -89,33 +89,33 @@ namespace U_3d
             GL.LineWidth(2.0f);
 
             // Crear los objetos buffer y asignar datos
-            _vertexArrayObject = GL.GenVertexArray();
-            GL.BindVertexArray(_vertexArrayObject);
+            vertexArrayHandle = GL.GenVertexArray();
+            GL.BindVertexArray(vertexArrayHandle);
 
-            _vertexBufferObject = GL.GenBuffer();
-            GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
+            vertexBufferHandle = GL.GenBuffer();
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBufferHandle);
             GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
-            _elementBufferObject = GL.GenBuffer();
-            GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
+            elementBufferHandle = GL.GenBuffer();
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, elementBufferHandle);
             GL.BufferData(BufferTarget.ElementArrayBuffer, _edges.Length * sizeof(uint), _edges, BufferUsageHint.StaticDraw);
 
             // Crear y compilar shaders
-            _shader = new Shader("shader.vert", "shader.frag");
-            _shader.Use();
+            shader = new Shader("shader.vert", "shader.frag");
+            shader.Use();
 
             // Definir el layout de los vértices
-            var vertexLocation = _shader.GetAttribLocation("aPosition");
+            var vertexLocation = shader.GetAttribLocation("aPosition");
             GL.EnableVertexAttribArray(vertexLocation);
             GL.VertexAttribPointer(vertexLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
-            var colorLocation = _shader.GetAttribLocation("aColor");
+            var colorLocation = shader.GetAttribLocation("aColor");
             GL.EnableVertexAttribArray(colorLocation);
             GL.VertexAttribPointer(colorLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 
             // Configuración de matrices para proyección 3D
-            _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), Size.X / (float)Size.Y, 0.1f, 100.0f);
-            _shader.SetMatrix4("projection", _projection);
+            projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), Size.X / (float)Size.Y, 0.1f, 100.0f);
+            shader.SetMatrix4("projection", projection);
         }
 
         protected override void OnUnload()
@@ -124,10 +124,10 @@ namespace U_3d
             GL.BindVertexArray(0);
             GL.UseProgram(0);
 
-            GL.DeleteBuffer(_vertexBufferObject);
-            GL.DeleteBuffer(_elementBufferObject);
-            GL.DeleteVertexArray(_vertexArrayObject);
-            GL.DeleteProgram(_shader.Handle);
+            GL.DeleteBuffer(vertexBufferHandle);
+            GL.DeleteBuffer(elementBufferHandle);
+            GL.DeleteVertexArray(vertexArrayHandle);
+            GL.DeleteProgram(shader.Handle);
 
             base.OnUnload();
         }
@@ -161,13 +161,13 @@ namespace U_3d
                 _cameraPosition += Vector3.Normalize(Vector3.Cross(_cameraFront, _cameraUp)) * cameraSpeed;
 
             if (input.IsKeyDown(Keys.Up))
-                _cameraPitch += _rotationSpeed * (float)args.Time;
+                _cameraPitch += rotationSpeed * (float)args.Time;
             if (input.IsKeyDown(Keys.Down))
-                _cameraPitch -= _rotationSpeed * (float)args.Time;
+                _cameraPitch -= rotationSpeed * (float)args.Time;
             if (input.IsKeyDown(Keys.Left))
-                _cameraYaw -= _rotationSpeed * (float)args.Time;
+                _cameraYaw -= rotationSpeed * (float)args.Time;
             if (input.IsKeyDown(Keys.Right))
-                _cameraYaw += _rotationSpeed * (float)args.Time;
+                _cameraYaw += rotationSpeed * (float)args.Time;
 
             // Limitar pitch para evitar el giro completo
             _cameraPitch = Math.Clamp(_cameraPitch, -89.0f, 89.0f);
@@ -182,7 +182,7 @@ namespace U_3d
             // Rotación automática
             if (!Paused)
             {
-                _totalRotation += 15.0f * (float)args.Time;
+                totalRotation += 15.0f * (float)args.Time;
             }
         }
 
@@ -192,17 +192,17 @@ namespace U_3d
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            _shader.Use();
+            shader.Use();
 
             // Actualizar matriz de vista desde la posición de la cámara
-            _view = Matrix4.LookAt(_cameraPosition, _cameraPosition + _cameraFront, _cameraUp);
-            _shader.SetMatrix4("view", _view);
+            view = Matrix4.LookAt(_cameraPosition, _cameraPosition + _cameraFront, _cameraUp);
+            shader.SetMatrix4("view", view);
 
             // Dibujar la U
-            Matrix4 model = Matrix4.CreateRotationY(MathHelper.DegreesToRadians(_totalRotation));
-            _shader.SetMatrix4("model", model);
+            Matrix4 model = Matrix4.CreateRotationY(MathHelper.DegreesToRadians(totalRotation));
+            shader.SetMatrix4("model", model);
 
-            GL.BindVertexArray(_vertexArrayObject);
+            GL.BindVertexArray(vertexArrayHandle);
             // Usar GL.Lines en lugar de GL.Triangles para dibujar líneas
             GL.DrawElements(PrimitiveType.Lines, _edges.Length, DrawElementsType.UnsignedInt, 0);
 
@@ -216,8 +216,8 @@ namespace U_3d
             GL.Viewport(0, 0, e.Width, e.Height);
 
             // Recalcular matriz de proyección al cambiar el tamaño de la ventana
-            _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), e.Width / (float)e.Height, 0.1f, 100.0f);
-            _shader.SetMatrix4("projection", _projection);
+            projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), e.Width / (float)e.Height, 0.1f, 100.0f);
+            shader.SetMatrix4("projection", projection);
         }
     }
 }

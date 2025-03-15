@@ -29,3 +29,4 @@ C:\Users\Anjel\Prog. Grafica\Semestre\U 3d\U 3d\obj\Debug\net9.0\refint\U 3d.dll
 C:\Users\Anjel\Prog. Grafica\Semestre\U 3d\U 3d\obj\Debug\net9.0\U 3d.pdb
 C:\Users\Anjel\Prog. Grafica\Semestre\U 3d\U 3d\obj\Debug\net9.0\U 3d.genruntimeconfig.cache
 C:\Users\Anjel\Prog. Grafica\Semestre\U 3d\U 3d\obj\Debug\net9.0\ref\U 3d.dll
+C:\Users\Anjel\Prog. Grafica\Semestre\U 3d\U 3d\obj\Debug\net9.0\U 3d.sourcelink.json
