@@ -1,10 +1,8 @@
-﻿using System;
-using OpenTK;
-using OpenTK.Windowing.Common;
-using OpenTK.Windowing.Desktop;
+﻿using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.GraphicsLibraryFramework;
+using OpenTK.Windowing.Common;
 
 namespace U_3d
 {
@@ -25,8 +23,13 @@ namespace U_3d
         private float rotationSpeed = 45.0f;
         private float totalRotation = 0.0f;
 
+        // para setear las coordenas
+        private float setX = 0.0f;
+        private float setY = 0.0f;
+        private float setZ = 0.0f;
+        private float speedSet = 0.00020f; 
 
-        private readonly float[] _vertices = {
+        private readonly float[] originalVertices = {
             // Posiciones XYZ           // Colores RGB 
             // Cara frontal de la U
             -1.0f, -1.0f,  0.5f,        1.0f, 1.0f, 1.0f, // 0
@@ -47,11 +50,13 @@ namespace U_3d
              0.6f,  1.0f, -0.5f,        1.0f, 1.0f, 1.0f, // 13
              1.0f,  1.0f, -0.5f,        1.0f, 1.0f, 1.0f, // 14
              1.0f, -1.0f, -0.5f,        1.0f, 1.0f, 1.0f, // 15
-    
         };
 
+        // Current vertices with applied offsets
+        private float[] _vertices;
+
         // Pares de índices que definen cada línea
-        private readonly uint[] _edges = {
+        private readonly uint[] edges = {
             // Parte Frontal de la U
             0, 1, 1, 2, 2, 3,
             0, 1, 1, 2, 2, 3,
@@ -76,6 +81,24 @@ namespace U_3d
             new NativeWindowSettings() { Size = (width, height), Title = title, APIVersion = new Version(4, 6) })
         {
             this.CenterWindow();
+
+            _vertices = new float[originalVertices.Length];
+            Array.Copy(originalVertices, _vertices, originalVertices.Length);
+        }
+
+
+        // ACTUALIZAR LOS VERTICES DE LA U
+        private void UpdateVertices()
+        {
+            for (int i = 0; i < originalVertices.Length; i += 6)
+            {
+                _vertices[i] = originalVertices[i] + setX;
+                _vertices[i + 1] = originalVertices[i + 1] + setY;
+                _vertices[i + 2] = originalVertices[i + 2] + setZ;
+            }
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBufferHandle);
+            GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.DynamicDraw);
         }
 
         protected override void OnLoad()
@@ -94,11 +117,11 @@ namespace U_3d
 
             vertexBufferHandle = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBufferHandle);
-            GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
+            GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.DynamicDraw);
 
             elementBufferHandle = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ElementArrayBuffer, elementBufferHandle);
-            GL.BufferData(BufferTarget.ElementArrayBuffer, _edges.Length * sizeof(uint), _edges, BufferUsageHint.StaticDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, edges.Length * sizeof(uint), edges, BufferUsageHint.StaticDraw);
 
             // Crear y compilar shaders
             shader = new Shader("shader.vert", "shader.frag");
@@ -141,6 +164,7 @@ namespace U_3d
                 return;
 
             var input = KeyboardState;
+            bool uUpdated = false;
 
             if (input.IsKeyDown(Keys.Escape))
                 Close();
@@ -148,6 +172,46 @@ namespace U_3d
             {
                 Paused = !Paused;
             }
+
+            // Mover los vertices de la U 
+            if (input.IsKeyDown(Keys.U)) 
+            {
+                setY += speedSet;
+                uUpdated = true;
+            }
+            if (input.IsKeyDown(Keys.J)) 
+            {
+                setY -= speedSet;
+                uUpdated = true;
+            }
+            if (input.IsKeyDown(Keys.H)) 
+            {
+                setX -= speedSet;
+                uUpdated = true;
+            }
+            if (input.IsKeyDown(Keys.K)) 
+            {
+                setX += speedSet;
+                uUpdated = true;
+            }
+
+            if (input.IsKeyDown(Keys.N))
+            {
+                setZ -= speedSet;
+                uUpdated = true;
+            }
+            if (input.IsKeyDown(Keys.M))
+            {
+                setZ += speedSet;
+                uUpdated = true;
+            }
+
+            // si los vertices fueron alterados se actulizan
+            if (uUpdated)
+            {
+                UpdateVertices();
+            }
+
             // Control de cámara
             float cameraSpeed = _cameraSpeed * (float)args.Time;
 
@@ -204,7 +268,7 @@ namespace U_3d
 
             GL.BindVertexArray(vertexArrayHandle);
             // Usar GL.Lines en lugar de GL.Triangles para dibujar líneas
-            GL.DrawElements(PrimitiveType.Lines, _edges.Length, DrawElementsType.UnsignedInt, 0);
+            GL.DrawElements(PrimitiveType.Lines, edges.Length, DrawElementsType.UnsignedInt, 0);
 
             SwapBuffers();
         }
