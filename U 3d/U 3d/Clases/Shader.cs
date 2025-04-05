@@ -6,7 +6,7 @@ using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
-namespace U_3d
+namespace U_3d.Clases
 {
     public class Shader
     {
