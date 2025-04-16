@@ -22,7 +22,6 @@ namespace U_3d.Clases
             _shader = new Shader();
             _objetos = new List<Objeto>();
 
-            // Crear objetos U según la cantidad especificada
             for (int i = 0; i < cantidadU; i++)
             {
                 float posicionX = i * _separacionEntreUs;
@@ -34,7 +33,7 @@ namespace U_3d.Clases
                 _objetos.Add(objeto);
             }
 
-            // Posicionar la cámara frente al primer objeto
+            //la cámara frente al primer objeto
             if (_objetos.Count > 0)
             {
                 Vector3 posicionPrimerObjeto = _objetos[0].ObtenerPosicion();
@@ -51,7 +50,7 @@ namespace U_3d.Clases
 
             _shader.Use();
 
-            // Inicializar todos los objetos
+            // inicializar objetos
             foreach (var objeto in _objetos)
             {
                 objeto.Inicializar(_shader);
@@ -76,18 +75,16 @@ namespace U_3d.Clases
 
         public void Actualizar(KeyboardState input, float deltaTime)
         {
-            // Procesar pausado de rotación
+            // pausado
             if (input.IsKeyPressed(Keys.Space))
                 _pausado = !_pausado;
 
-            // Actualizar cámara
             _camara.ProcesarMovimiento(input, deltaTime);
 
-            // Actualizar rotación global si no está pausado
             if (!_pausado)
                 _rotacionTotal += 15.0f * deltaTime;
 
-            // Actualizar rotación de cada objeto
+            // rotación de cada objeto
             foreach (var objeto in _objetos)
             {
                 objeto.SetRotacionY(_rotacionTotal);
@@ -98,11 +95,11 @@ namespace U_3d.Clases
         {
             _shader.Use();
 
-            // Configurar matriz de vista
+            // configurar matriz de vista
             var view = _camara.ObtenerMatrizVista();
             _shader.SetMatrix4("view", view);
 
-            // Dibujar ejes de coordenadas
+            //   dibujar ejes de coordenadas
             DibujarEjes();
 
             // Renderizar cada objeto

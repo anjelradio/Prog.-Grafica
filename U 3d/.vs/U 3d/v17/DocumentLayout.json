@@ -1,38 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\",
+  "WorkspaceRootPath": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\lineas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\lineas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\caras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\caras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\puntos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\puntos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\escenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\escenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\figura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\figura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|c:\\users\\anjel\\semestre 1 - 2025\\prog. grafica\\semestre\\u 3d\\u 3d\\clases\\puntos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{389D0B8E-EBB5-4457-93E2-6023F5D0A00E}|U 3d\\U 3d.csproj|solutionrelative:u 3d\\clases\\puntos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Program.cs",
-              "RelativeDocumentMoniker": "U 3d\\Program.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Program.cs",
-              "RelativeToolTip": "U 3d\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Puntos.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Puntos.cs",
+              "RelativeDocumentMoniker": "U 3d\\Clases\\Puntos.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Puntos.cs",
+              "RelativeToolTip": "U 3d\\Clases\\Puntos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:03:09.547Z",
+              "WhenOpened": "2025-04-15T21:29:14.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Figura.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Figura.cs",
+              "RelativeDocumentMoniker": "U 3d\\Clases\\Figura.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Figura.cs",
+              "RelativeToolTip": "U 3d\\Clases\\Figura.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAwwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:28:54.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Objeto.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Objeto.cs",
+              "RelativeDocumentMoniker": "U 3d\\Clases\\Objeto.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Objeto.cs",
+              "RelativeToolTip": "U 3d\\Clases\\Objeto.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T21:28:35.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Game.cs",
-              "RelativeDocumentMoniker": "U 3d\\Game.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Game.cs",
-              "RelativeToolTip": "U 3d\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAtAAAAAAAAAA==",
+              "Title": "Camara.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Camara.cs",
+              "RelativeDocumentMoniker": "U 3d\\Clases\\Camara.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Camara.cs",
+              "RelativeToolTip": "U 3d\\Clases\\Camara.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:03:08.935Z",
+              "WhenOpened": "2025-04-15T21:28:17.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Shader.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Shader.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Shader.cs",
               "RelativeDocumentMoniker": "U 3d\\Clases\\Shader.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Shader.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Shader.cs",
               "RelativeToolTip": "U 3d\\Clases\\Shader.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAAwGAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAUwDwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:03:08.097Z",
+              "WhenOpened": "2025-04-15T21:27:53.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Puntos.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Puntos.cs",
-              "RelativeDocumentMoniker": "U 3d\\Clases\\Puntos.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Puntos.cs",
-              "RelativeToolTip": "U 3d\\Clases\\Puntos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "Title": "Escenario.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Escenario.cs",
+              "RelativeDocumentMoniker": "U 3d\\Clases\\Escenario.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Escenario.cs",
+              "RelativeToolTip": "U 3d\\Clases\\Escenario.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAswGUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:03:07.444Z",
+              "WhenOpened": "2025-04-15T21:27:26.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Caras.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Caras.cs",
-              "RelativeDocumentMoniker": "U 3d\\Clases\\Caras.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Caras.cs",
-              "RelativeToolTip": "U 3d\\Clases\\Caras.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Program.cs",
+              "RelativeDocumentMoniker": "U 3d\\Program.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Program.cs",
+              "RelativeToolTip": "U 3d\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:03:05.548Z",
+              "WhenOpened": "2025-04-15T21:26:20.297Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Objeto.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Objeto.cs",
-              "RelativeDocumentMoniker": "U 3d\\Clases\\Objeto.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Objeto.cs",
-              "RelativeToolTip": "U 3d\\Clases\\Objeto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T13:57:41.036Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Lineas.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Lineas.cs",
-              "RelativeDocumentMoniker": "U 3d\\Clases\\Lineas.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Lineas.cs",
-              "RelativeToolTip": "U 3d\\Clases\\Lineas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Game.cs",
+              "RelativeDocumentMoniker": "U 3d\\Game.cs",
+              "ToolTip": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Game.cs",
+              "RelativeToolTip": "U 3d\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T13:57:30.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Camara.cs",
-              "DocumentMoniker": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Camara.cs",
-              "RelativeDocumentMoniker": "U 3d\\Clases\\Camara.cs",
-              "ToolTip": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\Clases\\Camara.cs",
-              "RelativeToolTip": "U 3d\\Clases\\Camara.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T02:29:19.107Z",
+              "WhenOpened": "2025-04-15T21:26:21.259Z",
               "EditorCaption": ""
             }
           ]

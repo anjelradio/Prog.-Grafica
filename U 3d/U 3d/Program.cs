@@ -1,5 +1,4 @@
 ﻿using System;
-using U_3d;
 
 namespace U_3d
 {
@@ -18,7 +17,7 @@ namespace U_3d
             }
             else
             {
-                Console.WriteLine("Cantidad inválida. Por favor, ingrese un número positivo.");
+                Console.WriteLine("Cantidad inválida.");
             }
         }
     }

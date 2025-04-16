@@ -1,44 +1,49 @@
-﻿using OpenTK.Mathematics;
-using OpenTK.Graphics.OpenGL;
-using U_3d.Clases;
+﻿using OpenTK.Graphics.OpenGL;
+using OpenTK.Mathematics;
 
-namespace U_3d
+namespace U_3d.Clases
 {
     public class Objeto
     {
         private int _vertexArrayHandle;
         private int _vertexBufferHandle;
         private int _elementBufferHandle;
-        private Puntos _puntos;
-        private Caras _caras;
+        private float[] _vertexData;
+        private uint[] _indices;
+        private Figura _figura;
 
-        public Objeto(Puntos puntos, Caras caras)
-        {
-            _puntos = puntos;
-            _caras = caras;
-        }
+        private Vector3 _posicion;
+        private Vector3 _rotacion;
+        private Vector3 _escala;
 
-        public void DesplazarHorizontalmente(float desplazamiento)
+        public Objeto(Puntos origen, float ancho, float alto, float profundidad, Vector3 color)
         {
-            // Modificar los vértices para desplazar la U horizontalmente
-            for (int i = 0; i < _puntos.OriginalVertices.Length; i += 6)
-            {
-                _puntos.CurrentVertices[i] = _puntos.OriginalVertices[i] + desplazamiento;
-            }
+            _posicion = origen.ToVector3();
+            _rotacion = Vector3.Zero;
+            _escala = Vector3.One;
+
+            //crear la figura en el origen
+            _figura = new Figura(origen, ancho, alto, profundidad, color);
+            (_vertexData, _indices) = _figura.ObtenerDatosRenderizado();
         }
 
         public void Inicializar(Shader shader)
         {
+            // generar y configurar VAO
             _vertexArrayHandle = GL.GenVertexArray();
             GL.BindVertexArray(_vertexArrayHandle);
 
+            // configurar VBO para los vértices
             _vertexBufferHandle = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferHandle);
-            GL.BufferData(BufferTarget.ArrayBuffer, _puntos.GetVerticesLength() * sizeof(float), _puntos.CurrentVertices, BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ArrayBuffer, _vertexData.Length * sizeof(float),
+                         _vertexData, BufferUsageHint.StaticDraw);
 
+            // configurar EBO para los índices
             _elementBufferHandle = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferHandle);
-            GL.BufferData(BufferTarget.ElementArrayBuffer, _caras.GetEdgesLength() * sizeof(uint), _caras.Edges, BufferUsageHint.StaticDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, _indices.Length * sizeof(uint),
+                         _indices, BufferUsageHint.StaticDraw);
 
             ConfigurarAtributos(shader);
         }
@@ -54,10 +59,36 @@ namespace U_3d
             GL.VertexAttribPointer(colorLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
         }
 
-        public void DibujarObjeto(Lineas lineas)
+        public void Dibujar(Shader shader)
         {
+            // Crear matriz de modelo
+            Matrix4 model = Matrix4.CreateScale(_escala) *
+                           Matrix4.CreateRotationX(MathHelper.DegreesToRadians(_rotacion.X)) *
+                           Matrix4.CreateRotationY(MathHelper.DegreesToRadians(_rotacion.Y)) *
+                           Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(_rotacion.Z)) *
+                           Matrix4.CreateTranslation(_posicion);
+
+            // Actualizar shader
+            shader.SetMatrix4("model", model);
+
+            // dibujar líneas
             GL.BindVertexArray(_vertexArrayHandle);
-            lineas.DibujarLineas(_caras.GetEdgesLength());
+            _figura.DibujarLineas(_indices.Length);
+        }
+
+        public void SetPosicion(float x, float y, float z)
+        {
+            _posicion = new Vector3(x, y, z);
+        }
+
+        public void SetRotacionY(float angulo)
+        {
+            _rotacion.Y = angulo;
+        }
+
+        public Vector3 ObtenerPosicion()
+        {
+            return _posicion;
         }
 
         public void Liberar()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "30WQ2ad8HHk=",
+  "dgSpecHash": "BHuKNnI34oM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
+  "projectFilePath": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anjel\\.nuget\\packages\\opentk\\4.9.3\\opentk.4.9.3.nupkg.sha512",
     "C:\\Users\\Anjel\\.nuget\\packages\\opentk.audio.openal\\4.9.3\\opentk.audio.openal.4.9.3.nupkg.sha512",

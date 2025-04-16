@@ -434,11 +434,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
+      "projectUniqueName": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
       "projectName": "U 3d",
-      "projectPath": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
+      "projectPath": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\U 3d.csproj",
       "packagesPath": "C:\\Users\\Anjel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anjel\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\obj\\",
+      "outputPath": "C:\\Users\\Anjel\\Semestre 1 - 2025\\Prog. Grafica\\Semestre\\U 3d\\U 3d\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

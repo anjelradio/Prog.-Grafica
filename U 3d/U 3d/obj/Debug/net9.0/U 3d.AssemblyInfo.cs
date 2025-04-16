@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("U 3d")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cedcbd2df2f2e559436b2f54eb381e3282d704e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05e02f3dc3cfa458bfe284238a8d7ceb7852d528")]
 [assembly: System.Reflection.AssemblyProductAttribute("U 3d")]
 [assembly: System.Reflection.AssemblyTitleAttribute("U 3d")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
