@@ -13,7 +13,7 @@ namespace U_3d.Clases
         private Matrix4 _projection;
         private float _rotacionTotal = 0.0f;
         private bool _pausado = false;
-        private float _separacionEntreUs = 2.5f;
+        private float _separacionEntreUs = 1.3f;
         private bool _inicializado = false;
 
         public Escenario(int cantidadU)

@@ -15,6 +15,7 @@ namespace U_3d.Clases
         private Vector3 _posicion;
         private Vector3 _rotacion;
         private Vector3 _escala;
+        private Vector3 _centroRotacion; // Centro de rotación del objeto
 
         public Objeto(Puntos origen, float ancho, float alto, float profundidad, Vector3 color)
         {
@@ -22,18 +23,25 @@ namespace U_3d.Clases
             _rotacion = Vector3.Zero;
             _escala = Vector3.One;
 
-            //crear la figura en el origen
+      
+            _centroRotacion = new Vector3(
+                _posicion.X + ancho / 2,
+                _posicion.Y + alto / 2,
+                _posicion.Z
+            );
+
+ 
             _figura = new Figura(origen, ancho, alto, profundidad, color);
             (_vertexData, _indices) = _figura.ObtenerDatosRenderizado();
         }
 
         public void Inicializar(Shader shader)
         {
-            // generar y configurar VAO
+            // gen y configurar VAO
             _vertexArrayHandle = GL.GenVertexArray();
             GL.BindVertexArray(_vertexArrayHandle);
 
-            // configurar VBO para los vértices
+            // configurar VBO 
             _vertexBufferHandle = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferHandle);
             GL.BufferData(BufferTarget.ArrayBuffer, _vertexData.Length * sizeof(float),
@@ -61,17 +69,19 @@ namespace U_3d.Clases
 
         public void Dibujar(Shader shader)
         {
-            // Crear matriz de modelo
-            Matrix4 model = Matrix4.CreateScale(_escala) *
-                           Matrix4.CreateRotationX(MathHelper.DegreesToRadians(_rotacion.X)) *
-                           Matrix4.CreateRotationY(MathHelper.DegreesToRadians(_rotacion.Y)) *
-                           Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(_rotacion.Z)) *
-                           Matrix4.CreateTranslation(_posicion);
+            Matrix4 model = Matrix4.CreateScale(_escala);
 
-            // Actualizar shader
+            model *= Matrix4.CreateTranslation(-_centroRotacion);
+            model *= Matrix4.CreateRotationX(MathHelper.DegreesToRadians(_rotacion.X));
+            model *= Matrix4.CreateRotationY(MathHelper.DegreesToRadians(_rotacion.Y));
+            model *= Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(_rotacion.Z));
+            model *= Matrix4.CreateTranslation(_centroRotacion);
+
+            // traslación original
+            model *= Matrix4.CreateTranslation(_posicion);
+
             shader.SetMatrix4("model", model);
 
-            // dibujar líneas
             GL.BindVertexArray(_vertexArrayHandle);
             _figura.DibujarLineas(_indices.Length);
         }
