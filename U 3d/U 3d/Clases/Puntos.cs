@@ -4,6 +4,7 @@ namespace U_3d.Clases
 {
     public class Puntos
     {
+  
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
