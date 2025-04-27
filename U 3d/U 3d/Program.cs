@@ -1,8 +1,4 @@
-﻿using System;
-using OpenTK.Mathematics;
-using U_3d.Clases;
-using System.Threading;
-using ImGuiNET;
+﻿using OpenTK.Mathematics;
 
 namespace U_3d.Clases
 {
@@ -14,13 +10,14 @@ namespace U_3d.Clases
             Console.Write("Ingrese la cantidad de U's a dibujar: ");
             if (int.TryParse(Console.ReadLine(), out int cantidadU) && cantidadU > 0)
             {
-             
+
                 using (Game game = new Game(1280, 720, "Manipulación de Objetos 3D", cantidadU))
                 {
-                    Utilidades(game);
+                    // Utilidades(game);
                     game.Run();
-                    
+
                 }
+                
             }
             else
             {
@@ -30,14 +27,16 @@ namespace U_3d.Clases
 
         private static void Utilidades(Game game)
         {
-            // Obtenemos el escenario para realizar pruebas
             var escenario = game.ObtenerEscenario();
-            Clases.Utilidades.Rotar(escenario["LetraU_2"],0f, 0f, 45f);
-            Clases.Utilidades.Rotar(escenario["LetraU_2"]["LateralDerecho"], 0f, 0f, 45f);
-            Clases.Utilidades.Trasladar(escenario["LetraU_2"]["LateralDerecho"]["Frontal"], new Vector3(0f,0f,3f));
-            Clases.Utilidades.Trasladar(escenario["LetraU_2"]["LateralDerecho"]["Inferior"], new Vector3(0f,-1.2f, 0f));
+
+
+            Clases.Utilidades.Rotar(escenario["LetraU_1"], 90f, 0f, 0f);
+            Clases.Utilidades.Trasladar(escenario["LetraU_1"]["Base"]["Inferior"], new Vector3(0f, -1f, 1f));
+            Clases.Utilidades.Trasladar(escenario["LetraU_2"], new Vector3(0f, 0f, 1f));
+            Clases.Utilidades.Escalar(escenario["LetraU_3"]["LateralIzquierdo"], new Vector3(1f, 2f, 1f));
+
         }
 
-        
+
     }
 }

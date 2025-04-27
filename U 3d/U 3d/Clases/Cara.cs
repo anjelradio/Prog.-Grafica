@@ -1,13 +1,12 @@
-﻿using OpenTK.Mathematics;
-using OpenTK.Graphics.OpenGL;
-using System;
+﻿using OpenTK.Graphics.OpenGL;
+using OpenTK.Mathematics;
 
 namespace U_3d.Clases
 {
     public class Cara : ITransformable
     {
         private Vector3[] _vertices;
-        private Vector3[] _verticesOriginales; // Mantener copia de los vértices originales
+        private Vector3[] _verticesOriginales;
         private Color4 _color;
         private string _nombre;
         private Vector3 _centro;
@@ -15,9 +14,6 @@ namespace U_3d.Clases
 
         public Cara(Vector3[] vertices, Color4 color, string nombre)
         {
-            if (vertices == null || vertices.Length < 3)
-                throw new ArgumentException("Una cara debe tener al menos 3 vértices.");
-
             _verticesOriginales = vertices;
             _vertices = new Vector3[vertices.Length];
             Array.Copy(vertices, _vertices, vertices.Length);
@@ -26,7 +22,6 @@ namespace U_3d.Clases
             _nombre = nombre;
             _matrizTransformacion = Matrix4.Identity;
 
-            // Calcular el centro de la cara
             CalcularCentro();
         }
 
@@ -42,47 +37,29 @@ namespace U_3d.Clases
 
         public void Dibujar(Matrix4 matrizPadre)
         {
-            // La matriz final combina la transformación padre con la transformación propia
-            Matrix4 matrizFinal = _matrizTransformacion * matrizPadre;
 
-            PrimitiveType tipoPrimitiva = _vertices.Length switch
-            {
-                2 => PrimitiveType.Lines,
-                3 => PrimitiveType.Triangles,
-                4 => PrimitiveType.Quads,
-                _ => PrimitiveType.Polygon
-            };
+            Matrix4 matrizFinal = matrizPadre * _matrizTransformacion;
 
-            GL.PushMatrix();
-            GL.MultMatrix(ref matrizFinal);
-
-            GL.Begin(tipoPrimitiva);
+            GL.Begin(PrimitiveType.Quads);
             GL.Color4(_color);
 
             foreach (var vertice in _verticesOriginales)
             {
-                GL.Vertex3(vertice);
+                Vector3 transformado = Vector3.TransformPosition(vertice, matrizFinal);
+                GL.Vertex3(transformado);
             }
 
             GL.End();
             GL.PopMatrix();
         }
 
-        // Implementación de ITransformable
         public void AplicarRotacion(float anguloX, float anguloY, float anguloZ)
         {
-            // Guardamos el centro actual
             Vector3 centroActual = _centro;
-
-            // Creamos matriz de traslación al origen, rotación, y traslación de vuelta
             Matrix4 trasladarAlOrigen = Matrix4.CreateTranslation(-centroActual);
             Matrix4 rotacion = Utilidades.CrearMatrizRotacion(anguloX, anguloY, anguloZ);
             Matrix4 trasladarDeVuelta = Matrix4.CreateTranslation(centroActual);
-
-            // Combinamos las transformaciones
             Matrix4 transformacionFinal = trasladarAlOrigen * rotacion * trasladarDeVuelta;
-
-            // Aplicamos a nuestra matriz de transformación actual
             _matrizTransformacion = transformacionFinal * _matrizTransformacion;
         }
 
@@ -90,23 +67,16 @@ namespace U_3d.Clases
         {
             Matrix4 matrizTraslacion = Utilidades.CrearMatrizTraslacion(traslacion);
             _matrizTransformacion = matrizTraslacion * _matrizTransformacion;
-            _centro += traslacion; // Actualizamos el centro
+            _centro += traslacion;
         }
 
         public void AplicarEscalado(Vector3 escala)
         {
-            // Guardamos el centro actual
             Vector3 centroActual = _centro;
-
-            // Creamos matriz de traslación al origen, escalado, y traslación de vuelta
             Matrix4 trasladarAlOrigen = Matrix4.CreateTranslation(-centroActual);
             Matrix4 escalado = Utilidades.CrearMatrizEscalado(escala);
             Matrix4 trasladarDeVuelta = Matrix4.CreateTranslation(centroActual);
-
-            // Combinamos las transformaciones
             Matrix4 transformacionFinal = trasladarAlOrigen * escalado * trasladarDeVuelta;
-
-            // Aplicamos a nuestra matriz de transformación actual
             _matrizTransformacion = transformacionFinal * _matrizTransformacion;
         }
 

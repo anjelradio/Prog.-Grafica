@@ -1,12 +1,6 @@
 ﻿using OpenTK.Mathematics;
-using OpenTK.Graphics.OpenGL;
 using OpenTK.Windowing.GraphicsLibraryFramework;
-using System.Collections.Generic;
 using System.Text.Json;
-using System.IO;
-using System;
-using System.Linq;
-
 
 namespace U_3d.Clases
 {
@@ -14,24 +8,22 @@ namespace U_3d.Clases
     {
         private Dictionary<string, Objeto> _objetos;
         private Camara _camara;
-        private bool _pause;
         private float _separacionEntreUs = 2.5f;
 
         public Escenario()
         {
             _objetos = new Dictionary<string, Objeto>();
             _camara = new Camara();
-            _pause = false;
+          
         }
 
         public void Inicializar(int cantidadObjetos, Color4 color)
         {
             for (int i = 1; i <= cantidadObjetos; i++)
             {
-                // Posición base
-                float x = i * _separacionEntreUs; // Separar en eje X
-                float y = 0.0f;
-                float z = 0.0f;  
+                float x = i * _separacionEntreUs;
+                float y = 0f;
+                float z = 0f;
 
                 string nombreObjeto = $"LetraU_{i}";
                 _objetos[nombreObjeto] = new Objeto(
@@ -53,11 +45,6 @@ namespace U_3d.Clases
 
         public void Actualizar(KeyboardState input, float deltaTime)
         {
-            if (input.IsKeyPressed(Keys.Space))
-            {
-                _pause = !_pause;
-            }
-
             _camara.ProcesarMovimiento(input, deltaTime);
         }
 
@@ -66,7 +53,6 @@ namespace U_3d.Clases
             return _camara.ObtenerMatrizVista();
         }
 
-        // guardar y cargar escenas
         public void Guardar(string rutaArchivo)
         {
             var datos = new
@@ -90,7 +76,7 @@ namespace U_3d.Clases
         {
             if (!File.Exists(rutaArchivo))
             {
-                throw new FileNotFoundException("El archivo no existe.", rutaArchivo);
+                throw new FileNotFoundException("archivo no existe.", rutaArchivo);
             }
 
             var json = File.ReadAllText(rutaArchivo);
@@ -126,19 +112,15 @@ namespace U_3d.Clases
             }
         }
 
-        // acceder a objetos, partes y caras
         public Objeto ObtenerObjeto(string nombreObjeto)
         {
             if (_objetos.ContainsKey(nombreObjeto))
                 return _objetos[nombreObjeto];
-            throw new KeyNotFoundException($"El objeto '{nombreObjeto}' no existe en el escenario");
+            throw new KeyNotFoundException($"'{nombreObjeto}' no existe");
         }
 
-        // index para acceder a los objetos
-        public Objeto this[string nombreObjeto]
-        {
-            get => ObtenerObjeto(nombreObjeto);
-        }
+        public Objeto this[string nombreObjeto] => ObtenerObjeto(nombreObjeto);
+
         public Dictionary<string, Objeto> Objetos => _objetos;
     }
 }

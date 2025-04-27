@@ -4,7 +4,7 @@ namespace U_3d.Clases
 {
     public class Puntos
     {
-  
+
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
@@ -16,7 +16,6 @@ namespace U_3d.Clases
             Z = z;
         }
 
-        //facilitar conversión a Vector3
         public Vector3 ToVector3()
         {
             return new Vector3(X, Y, Z);

@@ -1,0 +1,106 @@
+{
+  "Objetos": [
+    {
+      "Nombre": "LetraU_1",
+      "Centro": {
+        "X": 2.5,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Nombre": "LetraU_2",
+      "Centro": {
+        "X": 5,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Nombre": "LetraU_3",
+      "Centro": {
+        "X": 7.5,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Nombre": "LetraU_4",
+      "Centro": {
+        "X": 10,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Nombre": "LetraU_5",
+      "Centro": {
+        "X": 12.5,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Nombre": "LetraU_6",
+      "Centro": {
+        "X": 15,
+        "Y": 0,
+        "Z": 0
+      },
+      "AnchoPrincipal": 1.5,
+      "AltoPrincipal": 1.5,
+      "Profundidad": 0.3,
+      "Color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

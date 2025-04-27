@@ -13,4 +13,13 @@
     <SourceRoot Include="C:\Users\Anjel\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)vortice.direct3d11\3.2.0\build\Vortice.Direct3D11.props" Condition="Exists('$(NuGetPackageRoot)vortice.direct3d11\3.2.0\build\Vortice.Direct3D11.props')" />
+    <Import Project="$(NuGetPackageRoot)vortice.d3dcompiler\3.2.0\build\Vortice.D3DCompiler.props" Condition="Exists('$(NuGetPackageRoot)vortice.d3dcompiler\3.2.0\build\Vortice.D3DCompiler.props')" />
+    <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.1.7\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.1.7\build\SixLabors.ImageSharp.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\Anjel\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Anjel\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
+  </PropertyGroup>
 </Project>

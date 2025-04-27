@@ -1,5 +1,4 @@
-﻿using System;
-using OpenTK.Mathematics;
+﻿using OpenTK.Mathematics;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace U_3d.Clases
@@ -16,7 +15,7 @@ namespace U_3d.Clases
 
         public Camara()
         {
-            _posicion = new Vector3(2.5f, 0.0f, 3.0f); 
+            _posicion = new Vector3(2.5f, 0.0f, 3.0f);
             _frente = new Vector3(0.0f, 0.0f, -1.0f);
             _arriba = Vector3.UnitY;
             _yaw = -90.0f;
@@ -25,16 +24,10 @@ namespace U_3d.Clases
             _velocidadRotacion = 45.0f;
         }
 
-        public void ActualizarPosicion(Vector3 nuevaPosicion)
-        {
-            _posicion = nuevaPosicion;
-        }
-
         public void ProcesarMovimiento(KeyboardState input, float deltaTime)
         {
             float velocidadCamara = _velocidad * deltaTime;
 
-            
             if (input.IsKeyDown(Keys.W))
                 _posicion += velocidadCamara * _frente;
             if (input.IsKeyDown(Keys.S))
@@ -43,8 +36,6 @@ namespace U_3d.Clases
                 _posicion -= Vector3.Normalize(Vector3.Cross(_frente, _arriba)) * velocidadCamara;
             if (input.IsKeyDown(Keys.D))
                 _posicion += Vector3.Normalize(Vector3.Cross(_frente, _arriba)) * velocidadCamara;
-
-            
             if (input.IsKeyDown(Keys.E))
                 _posicion += velocidadCamara * _arriba;
             if (input.IsKeyDown(Keys.Q))
@@ -64,7 +55,6 @@ namespace U_3d.Clases
             if (input.IsKeyDown(Keys.Right))
                 _yaw += _velocidadRotacion * deltaTime;
 
-            // limitar el pitch para evitar inversiones
             _pitch = Math.Clamp(_pitch, -89.0f, 89.0f);
 
             ActualizarVectores();
@@ -72,7 +62,6 @@ namespace U_3d.Clases
 
         private void ActualizarVectores()
         {
-            // calcular nueva dirección frontal
             Vector3 direccion;
             direccion.X = (float)Math.Cos(MathHelper.DegreesToRadians(_yaw)) * (float)Math.Cos(MathHelper.DegreesToRadians(_pitch));
             direccion.Y = (float)Math.Sin(MathHelper.DegreesToRadians(_pitch));
